@@ -20,6 +20,14 @@ public class Squish {
     }
 
     private static QLibrary loadBuiltinhookLib() {
+        System.out.println("load extra lib");
+        QLibrary libhook = new QLibrary( libUrl("libsquishhook"));
+        if (!libhook.load()) {
+            System.err.println("Failed to load extra lib " + libhook.errorString());
+        } else {
+            System.out.println("Loaded extra lib " + libhook.fileName());
+        }
+
         System.out.println("Loading lib...");
 
         QLibrary qtwrapperLib = new QLibrary(libUrl("libsquishqtwrapper"));

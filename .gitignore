@@ -1,5 +1,5 @@
 ### IntelliJ IDEA ###
-out/
+#out/ removed so you don't have to compile
 !**/src/main/**/out/
 !**/src/test/**/out/
 
@@ -63,7 +63,7 @@ bin/
 # .idea/modules
 
 # CMake
-cmake-build-*/
+cmake-build-*/s
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
