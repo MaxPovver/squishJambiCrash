@@ -1,7 +1,5 @@
 # Demo for Squish 7.1 crashing Qt when running  the Java app
 
-### **This repository uses git-lfs, make sure you have it installed!**
-
 ## Steps to reproduce the issue
 
 1. Install Qt 6.4.0 
