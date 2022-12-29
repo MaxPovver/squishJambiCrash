@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a24766f-8db0-4a07-8f07-5bb779bf84a5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crashdemo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-charts-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-charts-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimedia-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimedia-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimediawidgets-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimediawidgets-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-network-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-network-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-printsupport-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-printsupport-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-qml-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-qml-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-quick-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-quick-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svg-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svg-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svgwidgets-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svgwidgets-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-uitools-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-uitools-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webchannel-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webchannel-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginecore-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginecore-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginequick-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginequick-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginewidgets-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginewidgets-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webview-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webview-native-macos-6.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crash/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crash/Squish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/first_crash.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/first_crash_squish.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/second_crash.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/second_crash_squish.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JZzqiklpm7obTEkYcKKse5se2s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/max/IdeaProjects/crashdemo/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="RunMe" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="crash.Main" />
+      <module name="crashdemo" />
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;$USER_HOME$/Qt/6.4.0/macos/lib&quot; -Dio.qt.log-messages=ALL -XstartOnFirstThread -Ddebug=true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a24766f-8db0-4a07-8f07-5bb779bf84a5" name="Changes" comment="" />
+      <created>1672300587538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672300587538</updated>
+      <workItem from="1672300588925" duration="952000" />
+      <workItem from="1672301932162" duration="3292000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

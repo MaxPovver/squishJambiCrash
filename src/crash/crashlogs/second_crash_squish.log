@@ -1,0 +1,72 @@
+R: [2022-12-29T11:28:30.555+0200] 2022-12-29T11:28:30	START     	Start 'appstarter'            	Test 'appstarter' started
+S Squish tools: [2022-12-29T11:28:30.556+0200] 11:28:30:556 Info: Connection from 127.0.0.1:50236.
+S Squish tools: [2022-12-29T11:28:30.557+0200] 11:28:30:556 Info: Starting AUT 'run.sh' with wrappers Qt: /Users/max/IdeaProjects/crashdemo/run.sh -j /Users/max/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home -q /Users/max/Qt/6.4.0/macos/lib -p /Users/max/IdeaProjects/crashdemo
+S Squish tools: [2022-12-29T11:28:32.481+0200] Step 1
+S Squish tools: [2022-12-29T11:28:32.584+0200] Step 2
+S Squish tools: [2022-12-29T11:28:32.587+0200] Step 3
+S Squish tools: [2022-12-29T11:28:32.603+0200] Step 4
+S Squish tools: [2022-12-29T11:28:32.655+0200] Step 5
+S Squish tools: [2022-12-29T11:28:32.660+0200] Step 6
+S Squish tools: [2022-12-29T11:28:34.196+0200] Loading lib...
+S Squish tools: [2022-12-29T11:28:34.347+0200] loaded lib/Applications/Squish for Qt 7.1.0/lib/libsquishqtwrapper.dylib
+S Squish tools: [2022-12-29T11:28:34.347+0200] load extra lib
+S Squish tools: [2022-12-29T11:28:34.348+0200] Loaded extra lib /Applications/Squish for Qt 7.1.0/lib/libsquishqtquickcommon.dylib
+S Squish tools: [2022-12-29T11:28:34.348+0200] load extra lib
+S Squish tools: [2022-12-29T11:28:34.354+0200] Loaded extra lib /Applications/Squish for Qt 7.1.0/lib/libsquishqtwebkitcommon.dylib
+S Squish tools: [2022-12-29T11:28:34.364+0200] loaded function io.qt.core.QFunctionPointer@5a45133e
+S Squish tools: [2022-12-29T11:28:34.364+0200] loaded function io.qt.core.QFunctionPointer@534a5a98
+S Squish tools: [2022-12-29T11:28:34.364+0200] loaded function io.qt.core.QFunctionPointer@4f80542f
+S Squish tools: [2022-12-29T11:28:34.364+0200] loaded function io.qt.core.QFunctionPointer@60bd273d
+S Squish tools: [2022-12-29T11:28:34.422+0200] 11:28:34:422 Info: Connection from 127.0.0.1:50237.
+S Squish tools: [2022-12-29T11:28:34.435+0200] Property QWheelEvent::QPointingDevice has unknown type const.
+S Squish tools: [2022-12-29T11:28:34.463+0200] Property QInputDevice::capabilities has unknown type QFlags<QInputDevice::Capability>.
+S Squish tools: [2022-12-29T11:28:34.464+0200] Property QInputDevice::systemId has unknown type long long.
+S Squish tools: [2022-12-29T11:28:34.464+0200] Property QPointingDeviceUniqueId::numericId has unknown type long long.
+S Squish tools: [2022-12-29T11:28:34.469+0200] 11:28:34:469 Info: Connection from 127.0.0.1:50238.
+R: [2022-12-29T11:28:34.470+0200] 2022-12-29T11:28:34	START     	Start 'appinspector'          	Test 'appinspector' started
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading Qt Wrapper configuration from "/Applications/Squish for Qt 7.1.0/etc/qtwrapper.ini"
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Installing atexit() handler to catch AUT shutdown
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Use of native dialogs in Qt is disabled (if possible)
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Qt version 6.4.0 (release), platform 'cocoa', build ABI 'x86_64-little_endian-lp64', operating system 'macOS 10.16'
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Reading wrapper extension descriptors from "/Applications/Squish for Qt 7.1.0/lib/extensions/qt"
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Read 12 wrapper extension descriptors
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading 12 wrapper extensions from "/Applications/Squish for Qt 7.1.0/lib/extensions/qt"
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension squishqtquicktypes
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension QtWebEngineWidgetsExt
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension squishqtprintsupport
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension SquishQtQuickExtension
+S Squish tools: [2022-12-29T11:28:34.562+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension QtQuickWebEngineExt
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension SquishQtQuickWidgetsExtension
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension SquishQtUiCoverageExtension
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension SquishQt3D
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension SquishQt3DQuick
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension QGraphicsViewExt
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension QTabWidgetExt
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loading wrapper extension squishopenglgrabwidget
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Loaded 12 out of 12 wrapper extensions from "/Applications/Squish for Qt 7.1.0/lib/extensions/qt"
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Logging of Qt events is disabled
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Object Highlighter display is enabled
+S Squish tools: [2022-12-29T11:28:34.563+0200] 11:28:34:562 Wrapper: java[4515]: Disabling Qt UI effects (if possible)
+S Squish tools: [2022-12-29T11:28:34.629+0200] squish hook loaded ok
+S Squish tools: [2022-12-29T11:28:34.629+0200] Step 6.5
+S Squish tools: [2022-12-29T11:28:34.629+0200] Step 6.5.2
+S Squish tools: [2022-12-29T11:28:34.630+0200] Step 6.5.2.5
+S Squish tools: [2022-12-29T11:28:34.630+0200] Step 6.5.3
+S Squish tools: [2022-12-29T11:28:34.779+0200] Step 6.5.4
+S Squish tools: [2022-12-29T11:28:34.822+0200] Step 6.5.5
+S Squish tools: [2022-12-29T11:28:34.948+0200] Step 6.5.6
+S Squish tools: [2022-12-29T11:28:34.959+0200] Step 6.5.7
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 6.5.8
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 6.5.9
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 6.6
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 6.6.1
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 6.6.2
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 6.6.3
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 7
+S Squish tools: [2022-12-29T11:28:34.969+0200] Step 8
+S Squish tools: [2022-12-29T11:28:34.971+0200] 11:28:34:970 Info: Connection to 127.0.0.1:50237 closed.
+S Squish tools: [2022-12-29T11:28:34.971+0200] 11:28:34:971 Wrapper: java[4515]: Installing event filter for builtin-hook
+S Squish tools: [2022-12-29T11:28:34.971+0200] 11:28:34:971 Info: AUT process '/Users/max/IdeaProjects/crashdemo/run.sh -j /Users/max/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home -q /Users/max/Qt/6.4.0/macos/lib -p /Users/max/IdeaProjects/crashdemo' (PID 4514) finished with exit status 138: Exited with return code 138.
+S Squish tools: [2022-12-29T11:28:34.980+0200] 11:28:34:979 Info: Connection to 127.0.0.1:50236 closed.
+S Squish tools: [2022-12-29T11:28:38.072+0200] 11:28:38:071 Info: Connection to 127.0.0.1:50238 closed.
+R: [2022-12-29T11:28:38.072+0200] squishrunner exited with value 137, started with arguments: [/Applications/Squish for Qt 7.1.0/bin/squishrunner, --debugLog, paw, --host, 127.0.0.1, --port, 49741, --inspect, --suitedir, /Users/max/squish/suite_NGEN999, --autid, 49, --useScriptedObjectMap]

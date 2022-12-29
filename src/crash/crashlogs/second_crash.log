@@ -1,0 +1,846 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+
+Process:               java [4515]
+Path:                  /Users/USER/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home/bin/java
+Identifier:            java
+Version:               ???
+Code Type:             X86-64 (Native)
+Parent Process:        Exited process [4514]
+Responsible:           squishide [1463]
+User ID:               501
+
+Date/Time:             2022-12-29 11:28:34.9711 +0200
+OS Version:            macOS 13.0.1 (22A400)
+Report Version:        12
+Bridge OS Version:     7.0 (20P420)
+Anonymous UUID:        FC39F471-AA10-B7BA-0CDC-2F2B1E387C07
+
+
+Time Awake Since Boot: 10000 seconds
+
+System Integrity Protection: disabled
+
+Crashed Thread:        0  Dispatch queue: com.apple.main-thread
+
+Exception Type:        EXC_BAD_ACCESS (SIGBUS)
+Exception Codes:       KERN_PROTECTION_FAILURE at 0x00000001034c0008
+Exception Codes:       0x0000000000000002, 0x00000001034c0008
+
+Termination Reason:    Namespace SIGNAL, Code 10 Bus error: 10
+Terminating Process:   exc handler [4515]
+
+VM Region Info: 0x1034c0008 is in 0x1034c0000-0x1034c1000;  bytes after start: 8  bytes before end: 4087
+      REGION TYPE                    START - END         [ VSIZE] PRT/MAX SHRMOD  REGION DETAIL
+      shared memory               1034bf000-1034c0000    [    4K] r--/r-- SM=SHM
+--->  VM_ALLOCATE                 1034c0000-1034c1000    [    4K] ---/rwx SM=NUL
+      VM_ALLOCATE                 1034c1000-1034c2000    [    4K] r--/rwx SM=PRV
+
+Thread 0 Crashed::  Dispatch queue: com.apple.main-thread
+0   ???                           	       0x10e1d7aa0 ???
+1   ???                           	       0x10dab2cc9 ???
+2   libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+3   libjvm.dylib                  	       0x1046e606a jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*) + 266
+4   libjvm.dylib                  	       0x1046e7629 jni_CallStaticBooleanMethodV + 389
+5   QtJambi                       	       0x133e42961 Java::QtJambi::ClassAnalyzerUtility::isGeneratedClass(JNIEnv_*, ...) + 177
+6   QtJambi                       	       0x133e83ee3 JavaAPI::resolveClosestQtSuperclass(JNIEnv_*, _jclass*, _jobject*) + 435
+7   QtJambi                       	       0x133ec7ccc SuperTypeInfos::fromClass(JNIEnv_*, _jclass*) + 460
+8   QtJambi                       	       0x133de2a1d Java_io_qt_internal_NativeUtility_getInterfaces + 61
+9   ???                           	       0x10dac1a10 ???
+10  ???                           	       0x10dabbfc0 ???
+11  ???                           	       0x10dabbfc0 ???
+12  ???                           	       0x10dabbfc0 ???
+13  ???                           	       0x10dabc267 ???
+14  ???                           	       0x10dabc267 ???
+15  ???                           	       0x10dabc267 ???
+16  ???                           	       0x10dabc267 ???
+17  ???                           	       0x10dabc267 ???
+18  ???                           	       0x10dabc267 ???
+19  ???                           	       0x10dabc267 ???
+20  ???                           	       0x10dab2cc9 ???
+21  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+22  libjvm.dylib                  	       0x1046e606a jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*) + 266
+23  libjvm.dylib                  	       0x1046e9930 jni_CallStaticVoidMethod + 462
+24  libjli.dylib                  	       0x103519aac JavaMain + 2722
+25  libjli.dylib                  	       0x10351bfb2 __JVMInit_block_invoke + 75
+26  Foundation                    	    0x7ff817051d47 __NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__ + 7
+27  Foundation                    	    0x7ff817051c3f -[NSBlockOperation main] + 98
+28  Foundation                    	    0x7ff817051bda __NSOPERATION_IS_INVOKING_MAIN__ + 17
+29  Foundation                    	    0x7ff817050ed1 -[NSOperation start] + 782
+30  Foundation                    	    0x7ff81708f420 __NSThreadPerformPerform + 177
+31  CoreFoundation                	    0x7ff816218bc8 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+32  CoreFoundation                	    0x7ff816218b77 __CFRunLoopDoSource0 + 157
+33  CoreFoundation                	    0x7ff816218951 __CFRunLoopDoSources0 + 212
+34  CoreFoundation                	    0x7ff8162175cb __CFRunLoopRun + 929
+35  CoreFoundation                	    0x7ff816216bb0 CFRunLoopRunSpecific + 560
+36  libjli.dylib                  	       0x10351b5ac CreateExecutionEnvironment + 398
+37  libjli.dylib                  	       0x103517817 JLI_Launch + 1315
+38  java                          	       0x1034752c4 main + 372
+39  dyld                          	    0x7ff815e0d310 start + 2432
+
+Thread 1:
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   Foundation                    	    0x7ff81766b3c8 -[_NSThreadPerformInfo wait] + 63
+3   Foundation                    	    0x7ff81705ec1e -[NSObject(NSThreadPerformAdditions) performSelector:onThread:withObject:waitUntilDone:modes:] + 450
+4   Foundation                    	    0x7ff81705e8fc -[NSObject(NSThreadPerformAdditions) performSelectorOnMainThread:withObject:waitUntilDone:] + 124
+5   libjli.dylib                  	       0x10351bef1 JVMInit + 262
+6   libjli.dylib                  	       0x103518b49 JLI_Launch + 6229
+7   java                          	       0x1034752c4 main + 372
+8   libjli.dylib                  	       0x10351c384 apple_main + 84
+9   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 2:: Java: GC Thread#0
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 3:: Java: G1 Main Marker
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048e861a Monitor::IWait(Thread*, long) + 140
+4   libjvm.dylib                  	       0x1048e8a52 Monitor::wait(bool, long, bool) + 110
+5   libjvm.dylib                  	       0x104600544 G1ConcurrentMarkThread::sleep_before_next_cycle() + 64
+6   libjvm.dylib                  	       0x1045ffea4 G1ConcurrentMarkThread::run_service() + 176
+7   libjvm.dylib                  	       0x10452bbd0 ConcurrentGCThread::run() + 48
+8   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+9   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+10  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 4:: Java: G1 Conc#0
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 5:: Java: G1 Refine#0
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048e861a Monitor::IWait(Thread*, long) + 140
+4   libjvm.dylib                  	       0x1048e8a52 Monitor::wait(bool, long, bool) + 110
+5   libjvm.dylib                  	       0x104601acb G1ConcurrentRefineThread::wait_for_completed_buffers() + 95
+6   libjvm.dylib                  	       0x104601c09 G1ConcurrentRefineThread::run_service() + 65
+7   libjvm.dylib                  	       0x10452bbd0 ConcurrentGCThread::run() + 48
+8   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+9   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+10  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 6:: Java: G1 Young RemSet Sampling
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048e860e Monitor::IWait(Thread*, long) + 128
+4   libjvm.dylib                  	       0x1048e8a52 Monitor::wait(bool, long, bool) + 110
+5   libjvm.dylib                  	       0x104630fd9 G1YoungRemSetSamplingThread::sleep_before_next_cycle() + 59
+6   libjvm.dylib                  	       0x104631027 G1YoungRemSetSamplingThread::run_service() + 65
+7   libjvm.dylib                  	       0x10452bbd0 ConcurrentGCThread::run() + 48
+8   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+9   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+10  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 7:: Java: VM Thread
+0   libjvm.dylib                  	       0x104427fc2 SpinPause + 2
+1   libjvm.dylib                  	       0x1049810c5 SafepointSynchronize::begin() + 855
+2   libjvm.dylib                  	       0x104ab467a VMThread::loop() + 218
+3   libjvm.dylib                  	       0x104ab44b3 VMThread::run() + 111
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 8:: Java: Reference Handler
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048e861a Monitor::IWait(Thread*, long) + 140
+4   libjvm.dylib                  	       0x1048e8b10 Monitor::wait(bool, long, bool) + 300
+5   libjvm.dylib                  	       0x10472892f JVM_WaitForReferencePendingList + 202
+6   ???                           	       0x10dac1a10 ???
+7   ???                           	       0x10dabc267 ???
+8   ???                           	       0x10dabc267 ???
+9   ???                           	       0x10dab2cc9 ???
+10  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+11  libjvm.dylib                  	       0x104699915 JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*) + 233
+12  libjvm.dylib                  	       0x1046999d0 JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*) + 98
+13  libjvm.dylib                  	       0x104726805 thread_entry(JavaThread*, Thread*) + 120
+14  libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+15  libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+16  libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+17  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+18  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+19  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 9:: Java: Finalizer
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048fd6b8 ObjectMonitor::wait(long, bool, Thread*) + 744
+4   libjvm.dylib                  	       0x104a37204 ObjectSynchronizer::wait(Handle, long, Thread*) + 248
+5   libjvm.dylib                  	       0x10471a66b JVM_MonitorWait + 299
+6   ???                           	       0x10dac1a10 ???
+7   ???                           	       0x10dabc267 ???
+8   ???                           	       0x10dabbfc0 ???
+9   ???                           	       0x10dabbfc0 ???
+10  ???                           	       0x10dab2cc9 ???
+11  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+12  libjvm.dylib                  	       0x104699915 JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*) + 233
+13  libjvm.dylib                  	       0x1046999d0 JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*) + 98
+14  libjvm.dylib                  	       0x104726805 thread_entry(JavaThread*, Thread*) + 120
+15  libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+16  libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+17  libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+18  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+19  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+20  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 10:
+0   libsystem_pthread.dylib       	    0x7ff816139c58 start_wqthread + 0
+
+Thread 11:
+0   libsystem_pthread.dylib       	    0x7ff816139c58 start_wqthread + 0
+
+Thread 12:: Java: Signal Dispatcher
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104911908 os::signal_wait() + 132
+3   libjvm.dylib                  	       0x10490c032 signal_thread_entry(JavaThread*, Thread*) + 57
+4   libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+5   libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+6   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+7   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+8   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+9   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 13:: Java: Service Thread
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048e861a Monitor::IWait(Thread*, long) + 140
+4   libjvm.dylib                  	       0x1048e8a52 Monitor::wait(bool, long, bool) + 110
+5   libjvm.dylib                  	       0x10498780e ServiceThread::service_thread_entry(JavaThread*, Thread*) + 450
+6   libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+7   libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+8   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+9   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+10  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 14:: Java: C2 CompilerThread0
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048e860e Monitor::IWait(Thread*, long) + 128
+4   libjvm.dylib                  	       0x1048e8b10 Monitor::wait(bool, long, bool) + 300
+5   libjvm.dylib                  	       0x10451a442 CompileQueue::get() + 118
+6   libjvm.dylib                  	       0x10451d0e7 CompileBroker::compiler_thread_loop() + 275
+7   libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+8   libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+9   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+10  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+11  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+12  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 15:: Java: C1 CompilerThread0
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048e860e Monitor::IWait(Thread*, long) + 128
+4   libjvm.dylib                  	       0x1048e8b10 Monitor::wait(bool, long, bool) + 300
+5   libjvm.dylib                  	       0x10451a442 CompileQueue::get() + 118
+6   libjvm.dylib                  	       0x10451d0e7 CompileBroker::compiler_thread_loop() + 275
+7   libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+8   libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+9   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+10  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+11  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+12  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 16:: Java: Sweeper thread
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048e860e Monitor::IWait(Thread*, long) + 128
+4   libjvm.dylib                  	       0x1048e8a52 Monitor::wait(bool, long, bool) + 110
+5   libjvm.dylib                  	       0x104a32dec NMethodSweeper::sweeper_loop() + 90
+6   libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+7   libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+8   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+9   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+10  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+11  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 17:: Java: VM Periodic Task Thread
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048e860e Monitor::IWait(Thread*, long) + 128
+4   libjvm.dylib                  	       0x1048e8a52 Monitor::wait(bool, long, bool) + 110
+5   libjvm.dylib                  	       0x104a6150b WatcherThread::sleep() const + 129
+6   libjvm.dylib                  	       0x104a615d7 WatcherThread::run() + 81
+7   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+8   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+9   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+10  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 18:: Java: Common-Cleaner
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048fd658 ObjectMonitor::wait(long, bool, Thread*) + 648
+4   libjvm.dylib                  	       0x104a37204 ObjectSynchronizer::wait(Handle, long, Thread*) + 248
+5   libjvm.dylib                  	       0x10471a66b JVM_MonitorWait + 299
+6   ???                           	       0x10dac1a10 ???
+7   ???                           	       0x10dabc267 ???
+8   ???                           	       0x10dabbfc0 ???
+9   ???                           	       0x10dabc2ac ???
+10  ???                           	       0x10dabc267 ???
+11  ???                           	       0x10dab2cc9 ???
+12  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+13  libjvm.dylib                  	       0x104699915 JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*) + 233
+14  libjvm.dylib                  	       0x1046999d0 JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*) + 98
+15  libjvm.dylib                  	       0x104726805 thread_entry(JavaThread*, Thread*) + 120
+16  libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+17  libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+18  libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+19  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+20  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+21  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 19:: Java: Timer-0
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048fd658 ObjectMonitor::wait(long, bool, Thread*) + 648
+4   libjvm.dylib                  	       0x104a37204 ObjectSynchronizer::wait(Handle, long, Thread*) + 248
+5   libjvm.dylib                  	       0x10471a66b JVM_MonitorWait + 299
+6   ???                           	       0x10dac1a10 ???
+7   ???                           	       0x10dabc267 ???
+8   ???                           	       0x10dabc267 ???
+9   ???                           	       0x10dab2cc9 ???
+10  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+11  libjvm.dylib                  	       0x104699915 JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*) + 233
+12  libjvm.dylib                  	       0x1046999d0 JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*) + 98
+13  libjvm.dylib                  	       0x104726805 thread_entry(JavaThread*, Thread*) + 120
+14  libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+15  libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+16  libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+17  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+18  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+19  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 20:: Java: QtJambiCleanupThread
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048fd6b8 ObjectMonitor::wait(long, bool, Thread*) + 744
+4   libjvm.dylib                  	       0x104a37204 ObjectSynchronizer::wait(Handle, long, Thread*) + 248
+5   libjvm.dylib                  	       0x10471a66b JVM_MonitorWait + 299
+6   ???                           	       0x10dac1a10 ???
+7   ???                           	       0x10dabc267 ???
+8   ???                           	       0x10dabbfc0 ???
+9   ???                           	       0x10dabbfc0 ???
+10  ???                           	       0x10dabc267 ???
+11  ???                           	       0x10dabc2ac ???
+12  ???                           	       0x10dab2cc9 ???
+13  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+14  libjvm.dylib                  	       0x104699915 JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*) + 233
+15  libjvm.dylib                  	       0x1046999d0 JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*) + 98
+16  libjvm.dylib                  	       0x104726805 thread_entry(JavaThread*, Thread*) + 120
+17  libjvm.dylib                  	       0x104a623ec JavaThread::thread_main_inner() + 130
+18  libjvm.dylib                  	       0x104a6223b JavaThread::run() + 289
+19  libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+20  libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+21  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+22  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 21:: Java: GC Thread#1
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 22:: Java: GC Thread#2
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 23:: Java: GC Thread#3
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 24:: Java: GC Thread#4
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 25:: Java: GC Thread#5
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 26:: Java: GC Thread#6
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 27:: Java: GC Thread#7
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 28:: Java: GC Thread#8
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 29:: Java: GC Thread#9
+0   libsystem_kernel.dylib        	    0x7ff8160ff61e semaphore_wait_trap + 10
+1   libjvm.dylib                  	       0x10498693e OSXSemaphore::wait() + 16
+2   libjvm.dylib                  	       0x104ad3876 SemaphoreGangTaskDispatcher::worker_wait_for_task() + 18
+3   libjvm.dylib                  	       0x104ad3359 GangWorker::loop() + 39
+4   libjvm.dylib                  	       0x104a60158 Thread::call_run() + 104
+5   libjvm.dylib                  	       0x10491051e thread_native_entry(Thread*) + 310
+6   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+7   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 30:
+0   libsystem_kernel.dylib        	    0x7ff8161083b6 __select + 10
+1   libtracelib.dylib             	       0x1380fcae8 froglogic::tracelib::processFds(froglogic::tracelib::EventContext*, int, fd_set*, fd_set*) + 446
+2   libtracelib.dylib             	       0x1380fbe49 froglogic::tracelib::unixEventProc(void*) + 140
+3   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+4   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 31:: com.apple.CFSocket.private
+0   libsystem_kernel.dylib        	    0x7ff8161083b6 __select + 10
+1   CoreFoundation                	    0x7ff8162404ea __CFSocketManager + 643
+2   libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+3   libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 32:: QThread
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104918cd2 os::PlatformEvent::park() + 126
+3   libjvm.dylib                  	       0x1048e83de Monitor::ILock(Thread*) + 196
+4   libjvm.dylib                  	       0x1048e8849 Monitor::lock_without_safepoint_check() + 33
+5   libjvm.dylib                  	       0x104982682 SafepointSynchronize::block(JavaThread*) + 236
+6   libjvm.dylib                  	       0x104984391 SafepointMechanism::block_if_requested_slow(JavaThread*) + 29
+7   libjvm.dylib                  	       0x1049cb3a8 ThreadBlockInVM::ThreadBlockInVM(JavaThread*) + 80
+8   libjvm.dylib                  	       0x1048e8aa2 Monitor::wait(bool, long, bool) + 190
+9   libjvm.dylib                  	       0x104ab50df VMThread::execute(VM_Operation*) + 573
+10  libjvm.dylib                  	       0x10441eca3 BiasedLocking::revoke_and_rebias(Handle, bool, Thread*) + 637
+11  libjvm.dylib                  	       0x104a36a7d ObjectSynchronizer::fast_enter(Handle, BasicLock*, bool, Thread*) + 69
+12  libjvm.dylib                  	       0x10498c827 SharedRuntime::monitor_enter_helper(oopDesc*, BasicLock*, JavaThread*, bool) + 187
+13  libjvm.dylib                  	       0x10448a3bd Runtime1::monitorenter(JavaThread*, oopDesc*, BasicObjectLock*) + 29
+14  ???                           	       0x10dba3d08 ???
+15  ???                           	       0x10e2ea6be ???
+16  ???                           	       0x10dabbfc0 ???
+17  ???                           	       0x10dabbfc0 ???
+18  ???                           	       0x10dabbfc0 ???
+19  ???                           	       0x10dabbfc0 ???
+20  ???                           	       0x10dab2cc9 ???
+21  libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+22  libjvm.dylib                  	       0x1046e606a jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*) + 266
+23  libjvm.dylib                  	       0x1046e9b0b jni_CallStaticVoidMethodV + 329
+24  QtJambi                       	       0x133dedaaf Java::QtJambi::NativeUtility::createAssociation(JNIEnv_*, ...) + 175
+25  QtJambi                       	       0x133ded24e currentJNIEnvironment(JavaVM_*, bool) + 942
+26  QtJambi                       	       0x133dedda7 JniEnvironment::JniEnvironment(int) + 55
+27  QtJambi                       	       0x133ed022e QtPrivate::QFunctorSlotObject<ThreadAPI::initializeThread(JNIEnv_*, _jobject*, _jobject*)::$_2, 0, QtPrivate::List<>, void>::impl(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*) + 94
+28  QtCore                        	       0x1347529d4 QtPrivate::QSlotObjectBase::call(QObject*, void**) + 21 (qobjectdefs_impl.h:363) [inlined]
+29  QtCore                        	       0x1347529d4 void doActivate<false>(QObject*, int, void**) + 804 (qobject.cpp:3972)
+30  QtCore                        	       0x134805658 QThread::started(QThread::QPrivateSignal) + 56 (moc_qthread.cpp:210)
+31  QtCore                        	       0x13488e5d8 QThreadPrivate::start(void*)::$_0::operator()() const + 230 (qthread_unix.cpp:316) [inlined]
+32  QtCore                        	       0x13488e5d8 void (anonymous namespace)::terminate_on_exception<QThreadPrivate::start(void*)::$_0>(QThreadPrivate::start(void*)::$_0&&) + 230 (qthread_unix.cpp:257) [inlined]
+33  QtCore                        	       0x13488e5d8 QThreadPrivate::start(void*) + 296 (qthread_unix.cpp:280)
+34  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+35  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+Thread 33:: QThread
+0   libsystem_kernel.dylib        	    0x7ff8161021fe __psynch_cvwait + 10
+1   libsystem_pthread.dylib       	    0x7ff81613e7e1 _pthread_cond_wait + 1243
+2   libjvm.dylib                  	       0x104917976 os::PlatformEvent::park(long) + 202
+3   libjvm.dylib                  	       0x1048fc3ae ObjectMonitor::EnterI(Thread*) + 446
+4   libjvm.dylib                  	       0x1048fbc67 ObjectMonitor::enter(Thread*) + 499
+5   libjvm.dylib                  	       0x104694631 InterpreterRuntime::monitorenter(JavaThread*, BasicObjectLock*) + 125
+6   ???                           	       0x10dad02d7 ???
+7   ???                           	       0x10dab2cc9 ???
+8   libjvm.dylib                  	       0x10469a49d JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*) + 519
+9   libjvm.dylib                  	       0x1046e606a jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*) + 266
+10  libjvm.dylib                  	       0x1046e9b0b jni_CallStaticVoidMethodV + 329
+11  QtJambi                       	       0x133dedaaf Java::QtJambi::NativeUtility::createAssociation(JNIEnv_*, ...) + 175
+12  QtJambi                       	       0x133ded24e currentJNIEnvironment(JavaVM_*, bool) + 942
+13  QtJambi                       	       0x133dedda7 JniEnvironment::JniEnvironment(int) + 55
+14  QtJambi                       	       0x133ed022e QtPrivate::QFunctorSlotObject<ThreadAPI::initializeThread(JNIEnv_*, _jobject*, _jobject*)::$_2, 0, QtPrivate::List<>, void>::impl(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*) + 94
+15  QtCore                        	       0x1347529d4 QtPrivate::QSlotObjectBase::call(QObject*, void**) + 21 (qobjectdefs_impl.h:363) [inlined]
+16  QtCore                        	       0x1347529d4 void doActivate<false>(QObject*, int, void**) + 804 (qobject.cpp:3972)
+17  QtCore                        	       0x134805658 QThread::started(QThread::QPrivateSignal) + 56 (moc_qthread.cpp:210)
+18  QtCore                        	       0x13488e5d8 QThreadPrivate::start(void*)::$_0::operator()() const + 230 (qthread_unix.cpp:316) [inlined]
+19  QtCore                        	       0x13488e5d8 void (anonymous namespace)::terminate_on_exception<QThreadPrivate::start(void*)::$_0>(QThreadPrivate::start(void*)::$_0&&) + 230 (qthread_unix.cpp:257) [inlined]
+20  QtCore                        	       0x13488e5d8 QThreadPrivate::start(void*) + 296 (qthread_unix.cpp:280)
+21  libsystem_pthread.dylib       	    0x7ff81613e259 _pthread_start + 125
+22  libsystem_pthread.dylib       	    0x7ff816139c7b thread_start + 15
+
+
+Thread 0 crashed with X86 Thread State (64-bit):
+  rax: 0x0000000800018f30  rbx: 0x0000000000001838  rcx: 0x000000000000011c  rdx: 0x000000061e75b5a0
+  rdi: 0x0000000133b001b0  rsi: 0x000000061e75b030  rbp: 0x00007ff7bca87608  rsp: 0x00007ff7bca87448
+   r8: 0x0000000000000000   r9: 0x00000000000000aa  r10: 0x00000001034c0008  r11: 0x0000000000000320
+  r12: 0x0000000000000000  r13: 0x00007ff7bca875a8  r14: 0x000000080009bbe8  r15: 0x00007f77e6809000
+  rip: 0x000000010e1d7aa0  rfl: 0x0000000000010202  cr2: 0x00000001034c0008
+
+Logical CPU:     6
+Error Code:      0x00000004 (no mapping for user data read)
+Trap Number:     14
+
+Thread 0 instruction stream:
+  44 8b 56 08 49 bc 00 00-00 00 08 00 00 00 4d 03  D.V.I.........M.
+  d4 4d 33 e4 4c 3b d0 0f-85 23 56 92 ff 66 66 90  .M3.L;...#V..ff.
+  89 84 24 00 c0 fe ff 55-48 83 ec 30 48 bf b0 01  ..$....UH..0H...
+  b0 33 01 00 00 00 8b 9f-04 01 00 00 83 c3 08 89  .3..............
+  9f 04 01 00 00 81 e3 f8-1f 00 00 83 fb 00 0f 84  ................
+  10 00 00 00 48 83 c4 30-5d 4d 8b 97 08 01 00 00  ....H..0]M......
+ [41]85 02 c3 49 ba 50 0e-9f 03 01 00 00 00 4c 89  A...I.P.......L.	<==
+  54 24 08 48 c7 04 24 ff-ff ff ff e8 c0 e2 9c ff  T$.H..$.........
+  eb d2 90 90 49 8b 87 48-04 00 00 49 ba 00 00 00  ....I..H...I....
+  00 00 00 00 00 4d 89 97-48 04 00 00 49 ba 00 00  .....M..H...I...
+  00 00 00 00 00 00 4d 89-97 50 04 00 00 48 83 c4  ......M..P...H..
+  30 5d e9 09 b2 93 ff f4-f4 f4 f4 f4 f4 f4 f4 f4  0]..............
+
+Binary Images:
+               0x0 - 0xffffffffffffffff ??? (*) <00000000-0000-0000-0000-000000000000> ???
+       0x1042e0000 -        0x104b93fff libjvm.dylib (*) <6892fecd-c1fb-38bc-a4ad-0230e7b61e73> /Users/USER/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home/lib/server/libjvm.dylib
+       0x133bb2000 -        0x134025fff com.yourcompany.QtJambi (6.4) <d97094a2-4ab0-33d8-a8f4-fd2719a65ac8> /private/var/folders/*/QtJambi.framework/Versions/6/QtJambi
+       0x103515000 -        0x10351ffff libjli.dylib (*) <94f6cc68-9d09-3f0c-ba8e-c8e641239823> /Users/USER/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home/lib/jli/libjli.dylib
+    0x7ff817010000 -     0x7ff817a21ff6 com.apple.Foundation (6.9) <eca88952-d3af-357e-80d8-4d31b2dc0c26> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+    0x7ff81619a000 -     0x7ff816632fff com.apple.CoreFoundation (6.9) <dbc459f3-81bb-398a-8f74-3f7392392bb7> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+       0x103474000 -        0x103477fff java (*) <f2aeea34-834c-3eea-b165-57e0d39109ea> /Users/USER/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home/bin/java
+    0x7ff815e07000 -     0x7ff815e9b54f dyld (*) <28fd2071-57f3-3873-87bf-e4f674a82de6> /usr/lib/dyld
+    0x7ff8160fe000 -     0x7ff816137ff7 libsystem_kernel.dylib (*) <0c2fd2c9-777c-3355-b70f-7b1b6e9d1b0b> /usr/lib/system/libsystem_kernel.dylib
+    0x7ff816138000 -     0x7ff816143ff7 libsystem_pthread.dylib (*) <13b5e252-77d1-31e1-888d-1c5f4426ea87> /usr/lib/system/libsystem_pthread.dylib
+       0x1380d4000 -        0x13810bfff libtracelib.dylib (*) <439ba912-a7e5-33c1-a1d2-c5cfd637bf65> /Applications/Squish for Qt 7.1.0/*/libtracelib.dylib
+       0x134693000 -        0x134b9afff org.qt-project.QtCore (6.4) <39502ba2-2fb9-3e10-9c0d-d3ea8879a1f3> /Users/USER/*/QtCore.framework/Versions/A/QtCore
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=1.1G resident=0K(0%) swapped_out_or_unallocated=1.1G(100%)
+Writable regions: Total=2.7G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=2.7G(100%)
+
+                                VIRTUAL   REGION
+REGION TYPE                        SIZE    COUNT (non-coalesced)
+===========                     =======  =======
+Activity Tracing                   256K        1
+ColorSync                          220K       24
+Kernel Alloc Once                    8K        1
+MALLOC                           350.3M       54
+MALLOC guard page                   48K        9
+MALLOC_MEDIUM (reserved)           1.4G       12         reserved VM address space (unallocated)
+MALLOC_NANO (reserved)           384.0M        1         reserved VM address space (unallocated)
+STACK GUARD                        292K       34
+Stack                             37.6M       34
+Stack Guard                       56.0M       13
+VM_ALLOCATE                        9.2G       91
+VM_ALLOCATE (reserved)           433.0M        5         reserved VM address space (unallocated)
+__CTF                               756        1
+__DATA                            50.0M      645
+__DATA_CONST                      51.6M      369
+__DATA_DIRTY                      1813K      221
+__FONT_DATA                        2352        1
+__GLSLBUILTINS                    5174K        1
+__LINKEDIT                       262.6M       72
+__OBJC_RO                         65.1M        1
+__OBJC_RW                         1982K        2
+__TEXT                           888.6M      658
+dyld private memory               2816K        3
+mapped file                      206.2M       18
+shared memory                      776K       18
+===========                     =======  =======
+TOTAL                             13.3G     2289
+TOTAL, minus reserved VM space    11.1G     2289
+
+
+
+-----------
+Full Report
+-----------
+
+{"app_name":"java","timestamp":"2022-12-29 11:28:35.00 +0200","app_version":"","slice_uuid":"f2aeea34-834c-3eea-b165-57e0d39109ea","build_version":"","platform":1,"share_with_app_devs":0,"is_first_party":1,"bug_type":"309","os_version":"macOS 13.0.1 (22A400)","roots_installed":0,"incident_id":"EA836933-2B2E-4347-8B10-22D1B77C71B7","name":"java"}
+{
+  "uptime" : 10000,
+  "procRole" : "Foreground",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "MacBookPro15,1",
+  "coalitionID" : 1543,
+  "osVersion" : {
+    "train" : "macOS 13.0.1",
+    "build" : "22A400",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2022-12-29 11:28:34.9711 +0200",
+  "incident" : "EA836933-2B2E-4347-8B10-22D1B77C71B7",
+  "pid" : 4515,
+  "cpuType" : "X86-64",
+  "roots_installed" : 0,
+  "bug_type" : "309",
+  "procLaunch" : "2022-12-29 11:28:30.5645 +0200",
+  "procStartAbsTime" : 10380137080344,
+  "procExitAbsTime" : 10384543103069,
+  "procName" : "java",
+  "procPath" : "\/Users\/USER\/Library\/Java\/JavaVirtualMachines\/azul-11.0.13\/Contents\/Home\/bin\/java",
+  "parentProc" : "Exited process",
+  "parentPid" : 4514,
+  "coalitionName" : "com.froglogic.squish.ide.product",
+  "crashReporterKey" : "FC39F471-AA10-B7BA-0CDC-2F2B1E387C07",
+  "responsiblePid" : 1463,
+  "responsibleProc" : "squishide",
+  "bridgeVersion" : {"build":"20P420","train":"7.0"},
+  "sip" : "disabled",
+  "vmRegionInfo" : "0x1034c0008 is in 0x1034c0000-0x1034c1000;  bytes after start: 8  bytes before end: 4087\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      shared memory               1034bf000-1034c0000    [    4K] r--\/r-- SM=SHM  \n--->  VM_ALLOCATE                 1034c0000-1034c1000    [    4K] ---\/rwx SM=NUL  \n      VM_ALLOCATE                 1034c1000-1034c2000    [    4K] r--\/rwx SM=PRV  ",
+  "exception" : {"codes":"0x0000000000000002, 0x00000001034c0008","rawCodes":[2,4350279688],"type":"EXC_BAD_ACCESS","signal":"SIGBUS","subtype":"KERN_PROTECTION_FAILURE at 0x00000001034c0008"},
+  "termination" : {"flags":0,"code":10,"namespace":"SIGNAL","indicator":"Bus error: 10","byProc":"exc handler","byPid":4515},
+  "vmregioninfo" : "0x1034c0008 is in 0x1034c0000-0x1034c1000;  bytes after start: 8  bytes before end: 4087\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      shared memory               1034bf000-1034c0000    [    4K] r--\/r-- SM=SHM  \n--->  VM_ALLOCATE                 1034c0000-1034c1000    [    4K] ---\/rwx SM=NUL  \n      VM_ALLOCATE                 1034c1000-1034c2000    [    4K] r--\/rwx SM=PRV  ",
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 0,
+  "threads" : [{"triggered":true,"id":141835,"instructionState":{"instructionStream":{"bytes":[68,139,86,8,73,188,0,0,0,0,8,0,0,0,77,3,212,77,51,228,76,59,208,15,133,35,86,146,255,102,102,144,137,132,36,0,192,254,255,85,72,131,236,48,72,191,176,1,176,51,1,0,0,0,139,159,4,1,0,0,131,195,8,137,159,4,1,0,0,129,227,248,31,0,0,131,251,0,15,132,16,0,0,0,72,131,196,48,93,77,139,151,8,1,0,0,65,133,2,195,73,186,80,14,159,3,1,0,0,0,76,137,84,36,8,72,199,4,36,255,255,255,255,232,192,226,156,255,235,210,144,144,73,139,135,72,4,0,0,73,186,0,0,0,0,0,0,0,0,77,137,151,72,4,0,0,73,186,0,0,0,0,0,0,0,0,77,137,151,80,4,0,0,72,131,196,48,93,233,9,178,147,255,244,244,244,244,244,244,244,244,244],"offset":96}},"threadState":{"r13":{"value":140701998806440},"rax":{"value":34359840560},"rflags":{"value":66050},"cpu":{"value":6},"r14":{"value":34360376296},"rsi":{"value":26280833072},"r8":{"value":0},"cr2":{"value":4350279688},"rdx":{"value":26280834464},"r10":{"value":4350279688},"r9":{"value":170},"r15":{"value":140152945020928},"rbx":{"value":6200},"trap":{"value":14,"description":"(no mapping for user data read)"},"err":{"value":4},"r11":{"value":800},"rip":{"value":4531780256,"matchesCrashFrame":1},"rbp":{"value":140701998806536},"rsp":{"value":140701998806088},"r12":{"value":0},"rcx":{"value":284},"flavor":"x86_THREAD_STATE","rdi":{"value":5162140080}},"queue":"com.apple.main-thread","frames":[{"imageOffset":4531780256,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":4218986,"symbol":"jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)","symbolLocation":266,"imageIndex":1},{"imageOffset":4224553,"symbol":"jni_CallStaticBooleanMethodV","symbolLocation":389,"imageIndex":1},{"imageOffset":2689377,"symbol":"Java::QtJambi::ClassAnalyzerUtility::isGeneratedClass(JNIEnv_*, ...)","symbolLocation":177,"imageIndex":2},{"imageOffset":2957027,"symbol":"JavaAPI::resolveClosestQtSuperclass(JNIEnv_*, _jclass*, _jobject*)","symbolLocation":435,"imageIndex":2},{"imageOffset":3235020,"symbol":"SuperTypeInfos::fromClass(JNIEnv_*, _jclass*)","symbolLocation":460,"imageIndex":2},{"imageOffset":2296349,"symbol":"Java_io_qt_internal_NativeUtility_getInterfaces","symbolLocation":61,"imageIndex":2},{"imageOffset":4524349968,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":4218986,"symbol":"jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)","symbolLocation":266,"imageIndex":1},{"imageOffset":4233520,"symbol":"jni_CallStaticVoidMethod","symbolLocation":462,"imageIndex":1},{"imageOffset":19116,"symbol":"JavaMain","symbolLocation":2722,"imageIndex":3},{"imageOffset":28594,"symbol":"__JVMInit_block_invoke","symbolLocation":75,"imageIndex":3},{"imageOffset":269639,"symbol":"__NSBLOCKOPERATION_IS_CALLING_OUT_TO_A_BLOCK__","symbolLocation":7,"imageIndex":4},{"imageOffset":269375,"symbol":"-[NSBlockOperation main]","symbolLocation":98,"imageIndex":4},{"imageOffset":269274,"symbol":"__NSOPERATION_IS_INVOKING_MAIN__","symbolLocation":17,"imageIndex":4},{"imageOffset":265937,"symbol":"-[NSOperation start]","symbolLocation":782,"imageIndex":4},{"imageOffset":521248,"symbol":"__NSThreadPerformPerform","symbolLocation":177,"imageIndex":4},{"imageOffset":519112,"symbol":"__CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__","symbolLocation":17,"imageIndex":5},{"imageOffset":519031,"symbol":"__CFRunLoopDoSource0","symbolLocation":157,"imageIndex":5},{"imageOffset":518481,"symbol":"__CFRunLoopDoSources0","symbolLocation":212,"imageIndex":5},{"imageOffset":513483,"symbol":"__CFRunLoopRun","symbolLocation":929,"imageIndex":5},{"imageOffset":510896,"symbol":"CFRunLoopRunSpecific","symbolLocation":560,"imageIndex":5},{"imageOffset":26028,"symbol":"CreateExecutionEnvironment","symbolLocation":398,"imageIndex":3},{"imageOffset":10263,"symbol":"JLI_Launch","symbolLocation":1315,"imageIndex":3},{"imageOffset":4804,"symbol":"main","symbolLocation":372,"imageIndex":6},{"imageOffset":25360,"symbol":"start","symbolLocation":2432,"imageIndex":7}]},{"id":141836,"frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6665160,"symbol":"-[_NSThreadPerformInfo wait]","symbolLocation":63,"imageIndex":4},{"imageOffset":322590,"symbol":"-[NSObject(NSThreadPerformAdditions) performSelector:onThread:withObject:waitUntilDone:modes:]","symbolLocation":450,"imageIndex":4},{"imageOffset":321788,"symbol":"-[NSObject(NSThreadPerformAdditions) performSelectorOnMainThread:withObject:waitUntilDone:]","symbolLocation":124,"imageIndex":4},{"imageOffset":28401,"symbol":"JVMInit","symbolLocation":262,"imageIndex":3},{"imageOffset":15177,"symbol":"JLI_Launch","symbolLocation":6229,"imageIndex":3},{"imageOffset":4804,"symbol":"main","symbolLocation":372,"imageIndex":6},{"imageOffset":29572,"symbol":"apple_main","symbolLocation":84,"imageIndex":3},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141837,"name":"Java: GC Thread#0","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141838,"name":"Java: G1 Main Marker","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6325786,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":140,"imageIndex":1},{"imageOffset":6326866,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":110,"imageIndex":1},{"imageOffset":3278148,"symbol":"G1ConcurrentMarkThread::sleep_before_next_cycle()","symbolLocation":64,"imageIndex":1},{"imageOffset":3276452,"symbol":"G1ConcurrentMarkThread::run_service()","symbolLocation":176,"imageIndex":1},{"imageOffset":2407376,"symbol":"ConcurrentGCThread::run()","symbolLocation":48,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141839,"name":"Java: G1 Conc#0","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141840,"name":"Java: G1 Refine#0","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6325786,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":140,"imageIndex":1},{"imageOffset":6326866,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":110,"imageIndex":1},{"imageOffset":3283659,"symbol":"G1ConcurrentRefineThread::wait_for_completed_buffers()","symbolLocation":95,"imageIndex":1},{"imageOffset":3283977,"symbol":"G1ConcurrentRefineThread::run_service()","symbolLocation":65,"imageIndex":1},{"imageOffset":2407376,"symbol":"ConcurrentGCThread::run()","symbolLocation":48,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141841,"name":"Java: G1 Young RemSet Sampling","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6325774,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":128,"imageIndex":1},{"imageOffset":6326866,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":110,"imageIndex":1},{"imageOffset":3477465,"symbol":"G1YoungRemSetSamplingThread::sleep_before_next_cycle()","symbolLocation":59,"imageIndex":1},{"imageOffset":3477543,"symbol":"G1YoungRemSetSamplingThread::run_service()","symbolLocation":65,"imageIndex":1},{"imageOffset":2407376,"symbol":"ConcurrentGCThread::run()","symbolLocation":48,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141842,"name":"Java: VM Thread","frames":[{"imageOffset":1343426,"symbol":"SpinPause","symbolLocation":2,"imageIndex":1},{"imageOffset":6951109,"symbol":"SafepointSynchronize::begin()","symbolLocation":855,"imageIndex":1},{"imageOffset":8210042,"symbol":"VMThread::loop()","symbolLocation":218,"imageIndex":1},{"imageOffset":8209587,"symbol":"VMThread::run()","symbolLocation":111,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141843,"name":"Java: Reference Handler","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6325786,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":140,"imageIndex":1},{"imageOffset":6327056,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":300,"imageIndex":1},{"imageOffset":4491567,"symbol":"JVM_WaitForReferencePendingList","symbolLocation":202,"imageIndex":1},{"imageOffset":4524349968,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":3905813,"symbol":"JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)","symbolLocation":233,"imageIndex":1},{"imageOffset":3906000,"symbol":"JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*)","symbolLocation":98,"imageIndex":1},{"imageOffset":4483077,"symbol":"thread_entry(JavaThread*, Thread*)","symbolLocation":120,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141844,"name":"Java: Finalizer","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6411960,"symbol":"ObjectMonitor::wait(long, bool, Thread*)","symbolLocation":744,"imageIndex":1},{"imageOffset":7696900,"symbol":"ObjectSynchronizer::wait(Handle, long, Thread*)","symbolLocation":248,"imageIndex":1},{"imageOffset":4433515,"symbol":"JVM_MonitorWait","symbolLocation":299,"imageIndex":1},{"imageOffset":4524349968,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":3905813,"symbol":"JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)","symbolLocation":233,"imageIndex":1},{"imageOffset":3906000,"symbol":"JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*)","symbolLocation":98,"imageIndex":1},{"imageOffset":4483077,"symbol":"thread_entry(JavaThread*, Thread*)","symbolLocation":120,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141845,"frames":[{"imageOffset":7256,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":9}]},{"id":141846,"frames":[{"imageOffset":7256,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":9}]},{"id":141847,"name":"Java: Signal Dispatcher","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":6494472,"symbol":"os::signal_wait()","symbolLocation":132,"imageIndex":1},{"imageOffset":6471730,"symbol":"signal_thread_entry(JavaThread*, Thread*)","symbolLocation":57,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141848,"name":"Java: Service Thread","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6325786,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":140,"imageIndex":1},{"imageOffset":6326866,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":110,"imageIndex":1},{"imageOffset":6977550,"symbol":"ServiceThread::service_thread_entry(JavaThread*, Thread*)","symbolLocation":450,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141849,"name":"Java: C2 CompilerThread0","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6325774,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":128,"imageIndex":1},{"imageOffset":6327056,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":300,"imageIndex":1},{"imageOffset":2335810,"symbol":"CompileQueue::get()","symbolLocation":118,"imageIndex":1},{"imageOffset":2347239,"symbol":"CompileBroker::compiler_thread_loop()","symbolLocation":275,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141850,"name":"Java: C1 CompilerThread0","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6325774,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":128,"imageIndex":1},{"imageOffset":6327056,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":300,"imageIndex":1},{"imageOffset":2335810,"symbol":"CompileQueue::get()","symbolLocation":118,"imageIndex":1},{"imageOffset":2347239,"symbol":"CompileBroker::compiler_thread_loop()","symbolLocation":275,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141851,"name":"Java: Sweeper thread","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6325774,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":128,"imageIndex":1},{"imageOffset":6326866,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":110,"imageIndex":1},{"imageOffset":7679468,"symbol":"NMethodSweeper::sweeper_loop()","symbolLocation":90,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141852,"name":"Java: VM Periodic Task Thread","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6325774,"symbol":"Monitor::IWait(Thread*, long)","symbolLocation":128,"imageIndex":1},{"imageOffset":6326866,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":110,"imageIndex":1},{"imageOffset":7869707,"symbol":"WatcherThread::sleep() const","symbolLocation":129,"imageIndex":1},{"imageOffset":7869911,"symbol":"WatcherThread::run()","symbolLocation":81,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141853,"name":"Java: Common-Cleaner","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6411864,"symbol":"ObjectMonitor::wait(long, bool, Thread*)","symbolLocation":648,"imageIndex":1},{"imageOffset":7696900,"symbol":"ObjectSynchronizer::wait(Handle, long, Thread*)","symbolLocation":248,"imageIndex":1},{"imageOffset":4433515,"symbol":"JVM_MonitorWait","symbolLocation":299,"imageIndex":1},{"imageOffset":4524349968,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524327596,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":3905813,"symbol":"JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)","symbolLocation":233,"imageIndex":1},{"imageOffset":3906000,"symbol":"JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*)","symbolLocation":98,"imageIndex":1},{"imageOffset":4483077,"symbol":"thread_entry(JavaThread*, Thread*)","symbolLocation":120,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141854,"name":"Java: Timer-0","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6411864,"symbol":"ObjectMonitor::wait(long, bool, Thread*)","symbolLocation":648,"imageIndex":1},{"imageOffset":7696900,"symbol":"ObjectSynchronizer::wait(Handle, long, Thread*)","symbolLocation":248,"imageIndex":1},{"imageOffset":4433515,"symbol":"JVM_MonitorWait","symbolLocation":299,"imageIndex":1},{"imageOffset":4524349968,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":3905813,"symbol":"JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)","symbolLocation":233,"imageIndex":1},{"imageOffset":3906000,"symbol":"JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*)","symbolLocation":98,"imageIndex":1},{"imageOffset":4483077,"symbol":"thread_entry(JavaThread*, Thread*)","symbolLocation":120,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141859,"name":"Java: QtJambiCleanupThread","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6411960,"symbol":"ObjectMonitor::wait(long, bool, Thread*)","symbolLocation":744,"imageIndex":1},{"imageOffset":7696900,"symbol":"ObjectSynchronizer::wait(Handle, long, Thread*)","symbolLocation":248,"imageIndex":1},{"imageOffset":4433515,"symbol":"JVM_MonitorWait","symbolLocation":299,"imageIndex":1},{"imageOffset":4524349968,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524327527,"imageIndex":0},{"imageOffset":4524327596,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":3905813,"symbol":"JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)","symbolLocation":233,"imageIndex":1},{"imageOffset":3906000,"symbol":"JavaCalls::call_virtual(JavaValue*, Handle, Klass*, Symbol*, Symbol*, Thread*)","symbolLocation":98,"imageIndex":1},{"imageOffset":4483077,"symbol":"thread_entry(JavaThread*, Thread*)","symbolLocation":120,"imageIndex":1},{"imageOffset":7873516,"symbol":"JavaThread::thread_main_inner()","symbolLocation":130,"imageIndex":1},{"imageOffset":7873083,"symbol":"JavaThread::run()","symbolLocation":289,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141889,"name":"Java: GC Thread#1","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141890,"name":"Java: GC Thread#2","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141891,"name":"Java: GC Thread#3","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141892,"name":"Java: GC Thread#4","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141893,"name":"Java: GC Thread#5","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141894,"name":"Java: GC Thread#6","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141895,"name":"Java: GC Thread#7","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141896,"name":"Java: GC Thread#8","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141897,"name":"Java: GC Thread#9","frames":[{"imageOffset":5662,"symbol":"semaphore_wait_trap","symbolLocation":10,"imageIndex":8},{"imageOffset":6973758,"symbol":"OSXSemaphore::wait()","symbolLocation":16,"imageIndex":1},{"imageOffset":8337526,"symbol":"SemaphoreGangTaskDispatcher::worker_wait_for_task()","symbolLocation":18,"imageIndex":1},{"imageOffset":8336217,"symbol":"GangWorker::loop()","symbolLocation":39,"imageIndex":1},{"imageOffset":7864664,"symbol":"Thread::call_run()","symbolLocation":104,"imageIndex":1},{"imageOffset":6489374,"symbol":"thread_native_entry(Thread*)","symbolLocation":310,"imageIndex":1},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141938,"frames":[{"imageOffset":41910,"symbol":"__select","symbolLocation":10,"imageIndex":8},{"imageOffset":166632,"symbol":"froglogic::tracelib::processFds(froglogic::tracelib::EventContext*, int, fd_set*, fd_set*)","symbolLocation":446,"imageIndex":10},{"imageOffset":163401,"symbol":"froglogic::tracelib::unixEventProc(void*)","symbolLocation":140,"imageIndex":10},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141939,"name":"com.apple.CFSocket.private","frames":[{"imageOffset":41910,"symbol":"__select","symbolLocation":10,"imageIndex":8},{"imageOffset":681194,"symbol":"__CFSocketManager","symbolLocation":643,"imageIndex":5},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141966,"name":"QThread","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6524114,"symbol":"os::PlatformEvent::park()","symbolLocation":126,"imageIndex":1},{"imageOffset":6325214,"symbol":"Monitor::ILock(Thread*)","symbolLocation":196,"imageIndex":1},{"imageOffset":6326345,"symbol":"Monitor::lock_without_safepoint_check()","symbolLocation":33,"imageIndex":1},{"imageOffset":6956674,"symbol":"SafepointSynchronize::block(JavaThread*)","symbolLocation":236,"imageIndex":1},{"imageOffset":6964113,"symbol":"SafepointMechanism::block_if_requested_slow(JavaThread*)","symbolLocation":29,"imageIndex":1},{"imageOffset":7254952,"symbol":"ThreadBlockInVM::ThreadBlockInVM(JavaThread*)","symbolLocation":80,"imageIndex":1},{"imageOffset":6326946,"symbol":"Monitor::wait(bool, long, bool)","symbolLocation":190,"imageIndex":1},{"imageOffset":8212703,"symbol":"VMThread::execute(VM_Operation*)","symbolLocation":573,"imageIndex":1},{"imageOffset":1305763,"symbol":"BiasedLocking::revoke_and_rebias(Handle, bool, Thread*)","symbolLocation":637,"imageIndex":1},{"imageOffset":7694973,"symbol":"ObjectSynchronizer::fast_enter(Handle, BasicLock*, bool, Thread*)","symbolLocation":69,"imageIndex":1},{"imageOffset":6998055,"symbol":"SharedRuntime::monitor_enter_helper(oopDesc*, BasicLock*, JavaThread*, bool)","symbolLocation":187,"imageIndex":1},{"imageOffset":1745853,"symbol":"Runtime1::monitorenter(JavaThread*, oopDesc*, BasicObjectLock*)","symbolLocation":29,"imageIndex":1},{"imageOffset":4525276424,"imageIndex":0},{"imageOffset":4532905662,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524326848,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":4218986,"symbol":"jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)","symbolLocation":266,"imageIndex":1},{"imageOffset":4233995,"symbol":"jni_CallStaticVoidMethodV","symbolLocation":329,"imageIndex":1},{"imageOffset":2341551,"symbol":"Java::QtJambi::NativeUtility::createAssociation(JNIEnv_*, ...)","symbolLocation":175,"imageIndex":2},{"imageOffset":2339406,"symbol":"currentJNIEnvironment(JavaVM_*, bool)","symbolLocation":942,"imageIndex":2},{"imageOffset":2342311,"symbol":"JniEnvironment::JniEnvironment(int)","symbolLocation":55,"imageIndex":2},{"imageOffset":3269166,"symbol":"QtPrivate::QFunctorSlotObject<ThreadAPI::initializeThread(JNIEnv_*, _jobject*, _jobject*)::$_2, 0, QtPrivate::List<>, void>::impl(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*)","symbolLocation":94,"imageIndex":2},{"symbol":"QtPrivate::QSlotObjectBase::call(QObject*, void**)","inline":true,"imageIndex":11,"imageOffset":784852,"symbolLocation":21,"sourceLine":363,"sourceFile":"qobjectdefs_impl.h"},{"imageOffset":784852,"sourceLine":3972,"sourceFile":"qobject.cpp","symbol":"void doActivate<false>(QObject*, int, void**)","imageIndex":11,"symbolLocation":804},{"imageOffset":1517144,"sourceLine":210,"sourceFile":"moc_qthread.cpp","symbol":"QThread::started(QThread::QPrivateSignal)","imageIndex":11,"symbolLocation":56},{"symbol":"QThreadPrivate::start(void*)::$_0::operator()() const","inline":true,"imageIndex":11,"imageOffset":2078168,"symbolLocation":230,"sourceLine":316,"sourceFile":"qthread_unix.cpp"},{"symbol":"void (anonymous namespace)::terminate_on_exception<QThreadPrivate::start(void*)::$_0>(QThreadPrivate::start(void*)::$_0&&)","inline":true,"imageIndex":11,"imageOffset":2078168,"symbolLocation":230,"sourceLine":257,"sourceFile":"qthread_unix.cpp"},{"imageOffset":2078168,"sourceLine":280,"sourceFile":"qthread_unix.cpp","symbol":"QThreadPrivate::start(void*)","imageIndex":11,"symbolLocation":296},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]},{"id":141967,"name":"QThread","frames":[{"imageOffset":16894,"symbol":"__psynch_cvwait","symbolLocation":10,"imageIndex":8},{"imageOffset":26593,"symbol":"_pthread_cond_wait","symbolLocation":1243,"imageIndex":9},{"imageOffset":6519158,"symbol":"os::PlatformEvent::park(long)","symbolLocation":202,"imageIndex":1},{"imageOffset":6407086,"symbol":"ObjectMonitor::EnterI(Thread*)","symbolLocation":446,"imageIndex":1},{"imageOffset":6405223,"symbol":"ObjectMonitor::enter(Thread*)","symbolLocation":499,"imageIndex":1},{"imageOffset":3884593,"symbol":"InterpreterRuntime::monitorenter(JavaThread*, BasicObjectLock*)","symbolLocation":125,"imageIndex":1},{"imageOffset":4524409559,"imageIndex":0},{"imageOffset":4524289225,"imageIndex":0},{"imageOffset":3908765,"symbol":"JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)","symbolLocation":519,"imageIndex":1},{"imageOffset":4218986,"symbol":"jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)","symbolLocation":266,"imageIndex":1},{"imageOffset":4233995,"symbol":"jni_CallStaticVoidMethodV","symbolLocation":329,"imageIndex":1},{"imageOffset":2341551,"symbol":"Java::QtJambi::NativeUtility::createAssociation(JNIEnv_*, ...)","symbolLocation":175,"imageIndex":2},{"imageOffset":2339406,"symbol":"currentJNIEnvironment(JavaVM_*, bool)","symbolLocation":942,"imageIndex":2},{"imageOffset":2342311,"symbol":"JniEnvironment::JniEnvironment(int)","symbolLocation":55,"imageIndex":2},{"imageOffset":3269166,"symbol":"QtPrivate::QFunctorSlotObject<ThreadAPI::initializeThread(JNIEnv_*, _jobject*, _jobject*)::$_2, 0, QtPrivate::List<>, void>::impl(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*)","symbolLocation":94,"imageIndex":2},{"symbol":"QtPrivate::QSlotObjectBase::call(QObject*, void**)","inline":true,"imageIndex":11,"imageOffset":784852,"symbolLocation":21,"sourceLine":363,"sourceFile":"qobjectdefs_impl.h"},{"imageOffset":784852,"sourceLine":3972,"sourceFile":"qobject.cpp","symbol":"void doActivate<false>(QObject*, int, void**)","imageIndex":11,"symbolLocation":804},{"imageOffset":1517144,"sourceLine":210,"sourceFile":"moc_qthread.cpp","symbol":"QThread::started(QThread::QPrivateSignal)","imageIndex":11,"symbolLocation":56},{"symbol":"QThreadPrivate::start(void*)::$_0::operator()() const","inline":true,"imageIndex":11,"imageOffset":2078168,"symbolLocation":230,"sourceLine":316,"sourceFile":"qthread_unix.cpp"},{"symbol":"void (anonymous namespace)::terminate_on_exception<QThreadPrivate::start(void*)::$_0>(QThreadPrivate::start(void*)::$_0&&)","inline":true,"imageIndex":11,"imageOffset":2078168,"symbolLocation":230,"sourceLine":257,"sourceFile":"qthread_unix.cpp"},{"imageOffset":2078168,"sourceLine":280,"sourceFile":"qthread_unix.cpp","symbol":"QThreadPrivate::start(void*)","imageIndex":11,"symbolLocation":296},{"imageOffset":25177,"symbol":"_pthread_start","symbolLocation":125,"imageIndex":9},{"imageOffset":7291,"symbol":"thread_start","symbolLocation":15,"imageIndex":9}]}],
+  "usedImages" : [
+  {
+    "size" : 0,
+    "source" : "A",
+    "base" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4365090816,
+    "size" : 9125888,
+    "uuid" : "6892fecd-c1fb-38bc-a4ad-0230e7b61e73",
+    "path" : "\/Users\/USER\/Library\/Java\/JavaVirtualMachines\/azul-11.0.13\/Contents\/Home\/lib\/server\/libjvm.dylib",
+    "name" : "libjvm.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 5162868736,
+    "CFBundleShortVersionString" : "6.4",
+    "CFBundleIdentifier" : "com.yourcompany.QtJambi",
+    "size" : 4669440,
+    "uuid" : "d97094a2-4ab0-33d8-a8f4-fd2719a65ac8",
+    "path" : "\/private\/var\/folders\/*\/QtJambi.framework\/Versions\/6\/QtJambi",
+    "name" : "QtJambi",
+    "CFBundleVersion" : "6.4.2"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4350627840,
+    "size" : 45056,
+    "uuid" : "94f6cc68-9d09-3f0c-ba8e-c8e641239823",
+    "path" : "\/Users\/USER\/Library\/Java\/JavaVirtualMachines\/azul-11.0.13\/Contents\/Home\/lib\/jli\/libjli.dylib",
+    "name" : "libjli.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703514558464,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.Foundation",
+    "size" : 10559479,
+    "uuid" : "eca88952-d3af-357e-80d8-4d31b2dc0c26",
+    "path" : "\/System\/Library\/Frameworks\/Foundation.framework\/Versions\/C\/Foundation",
+    "name" : "Foundation",
+    "CFBundleVersion" : "1953.1"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64h",
+    "base" : 140703499395072,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 4820992,
+    "uuid" : "dbc459f3-81bb-398a-8f74-3f7392392bb7",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/Versions\/A\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "1953.1"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 4349968384,
+    "size" : 16384,
+    "uuid" : "f2aeea34-834c-3eea-b165-57e0d39109ea",
+    "path" : "\/Users\/USER\/Library\/Java\/JavaVirtualMachines\/azul-11.0.13\/Contents\/Home\/bin\/java",
+    "name" : "java"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703495647232,
+    "size" : 607568,
+    "uuid" : "28fd2071-57f3-3873-87bf-e4f674a82de6",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703498756096,
+    "size" : 237560,
+    "uuid" : "0c2fd2c9-777c-3355-b70f-7b1b6e9d1b0b",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 140703498993664,
+    "size" : 49144,
+    "uuid" : "13b5e252-77d1-31e1-888d-1c5f4426ea87",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 5235359744,
+    "size" : 229376,
+    "uuid" : "439ba912-a7e5-33c1-a1d2-c5cfd637bf65",
+    "path" : "\/Applications\/Squish for Qt 7.1.0\/*\/libtracelib.dylib",
+    "name" : "libtracelib.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "x86_64",
+    "base" : 5174276096,
+    "CFBundleShortVersionString" : "6.4",
+    "CFBundleIdentifier" : "org.qt-project.QtCore",
+    "size" : 5275648,
+    "uuid" : "39502ba2-2fb9-3e10-9c0d-d3ea8879a1f3",
+    "path" : "\/Users\/USER\/*\/QtCore.framework\/Versions\/A\/QtCore",
+    "name" : "QtCore",
+    "CFBundleVersion" : "6.4.0"
+  }
+],
+  "sharedCache" : {
+  "base" : 140703495041024,
+  "size" : 21474836480,
+  "uuid" : "840e528a-0c70-3c6a-b7b4-4f05f32ccc51"
+},
+  "vmSummary" : "ReadOnly portion of Libraries: Total=1.1G resident=0K(0%) swapped_out_or_unallocated=1.1G(100%)\nWritable regions: Total=2.7G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=2.7G(100%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nActivity Tracing                   256K        1 \nColorSync                          220K       24 \nKernel Alloc Once                    8K        1 \nMALLOC                           350.3M       54 \nMALLOC guard page                   48K        9 \nMALLOC_MEDIUM (reserved)           1.4G       12         reserved VM address space (unallocated)\nMALLOC_NANO (reserved)           384.0M        1         reserved VM address space (unallocated)\nSTACK GUARD                        292K       34 \nStack                             37.6M       34 \nStack Guard                       56.0M       13 \nVM_ALLOCATE                        9.2G       91 \nVM_ALLOCATE (reserved)           433.0M        5         reserved VM address space (unallocated)\n__CTF                               756        1 \n__DATA                            50.0M      645 \n__DATA_CONST                      51.6M      369 \n__DATA_DIRTY                      1813K      221 \n__FONT_DATA                        2352        1 \n__GLSLBUILTINS                    5174K        1 \n__LINKEDIT                       262.6M       72 \n__OBJC_RO                         65.1M        1 \n__OBJC_RW                         1982K        2 \n__TEXT                           888.6M      658 \ndyld private memory               2816K        3 \nmapped file                      206.2M       18 \nshared memory                      776K       18 \n===========                     =======  ======= \nTOTAL                             13.3G     2289 \nTOTAL, minus reserved VM space    11.1G     2289 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+    "queue" : "com.apple.main-thread"
+  }
+},
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "60f8ddccefea4203d95cbeef",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000021
+    },
+    {
+      "rolloutId" : "62699e1ec1ff2978b47f6c3b",
+      "factorPackIds" : {
+        "SIRI_FIND_MY_CONFIGURATION_FILES" : "631f72d1de559130376df1fb"
+      },
+      "deploymentId" : 240000023
+    }
+  ],
+  "experiments" : [
+
+  ]
+}
+}
+
+Model: MacBookPro15,1, BootROM 1916.40.8.0.0 (iBridge: 20.16.420.0.0,0), 6 processors, 6-Core Intel Core i7, 2,6 GHz, 32 GB, SMC
+Graphics: Intel UHD Graphics 630, Intel UHD Graphics 630, Built-In
+Display: Color LCD, 2880 x 1800 Retina, Main, MirrorOff, Online
+Graphics: Radeon Pro 560X, Radeon Pro 560X, PCIe, 4 GB
+Memory Module: BANK 0/ChannelA-DIMM0, 16 GB, DDR4, 2400 MHz, Micron, 16ATS2G64HZ-2G6B1
+Memory Module: BANK 2/ChannelB-DIMM0, 16 GB, DDR4, 2400 MHz, Micron, 16ATS2G64HZ-2G6B1
+AirPort: spairport_wireless_card_type_wifi (0x14E4, 0x7BF), wl0: Sep 14 2022 18:10:05 version 9.30.489.3.32.5.84 FWID 01-31bf0e8d
+Bluetooth: Version (null), 0 services, 0 devices, 0 incoming serial ports
+Network Service: Wi-Fi, AirPort, en0
+USB Device: USB31Bus
+USB Device: T2Bus
+USB Device: Touch Bar Backlight
+USB Device: Touch Bar Display
+USB Device: Apple Internal Keyboard / Trackpad
+USB Device: Headset
+USB Device: Ambient Light Sensor
+USB Device: FaceTime HD Camera (Built-in)
+USB Device: Apple T2 Controller
+Thunderbolt Bus: MacBook Pro, Apple Inc., 47.5
+Thunderbolt Bus: MacBook Pro, Apple Inc., 47.5
