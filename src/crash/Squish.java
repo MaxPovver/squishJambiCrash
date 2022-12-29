@@ -4,7 +4,6 @@ import io.qt.QtUtilities;
 import io.qt.core.QLibrary;
 
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class Squish {
     //squish prefix and qt bin/lib dir must be in jna.library.path
@@ -63,15 +62,15 @@ public class Squish {
         var qtwrapperLib = loadBuiltinhookLib();
         var function = qtwrapperLib.resolve("qtwrapper_initialize_builtin_hook" );
         System.out.println("loaded function " + function);
-        var function2 = qtwrapperLib.resolve("squishqtwrapper_init" );
+        /*var function2 = qtwrapperLib.resolve("squishqtwrapper_init" );
         System.out.println("loaded function " + function2);
-        //function2.invoke();
+        function2.invoke();
         function2 = qtwrapperLib.resolve("squishqtwrapper_init" );
         System.out.println("loaded function " + function2);
         //function2.invoke();
         function2 = qtwrapperLib.resolve("squishqtwrapper_init" );
         System.out.println("loaded function " + function2);
-        //function2.invoke();
+        //function2.invoke();*/
         return (Short value) -> (Boolean) function.invoke(Boolean.class, new Object[] { (short)0});
     }
 
@@ -87,7 +86,8 @@ public class Squish {
         var initFunc = loadBuiltinhookLibAndResolve();
         //return initFunc.map(p -> p.invoke(boolean.class, (short) 0)).orElse(false);
         var result = initFunc.apply((short) 0);
-        QtUtilities.reinstallEventNotifyCallback();
+        System.out.println("reinstalling Jambi callback...");
+        QtUtilities.reinstallEventNotifyCallback(); // reinstall jambi callback
         return result;
     }
 
@@ -95,7 +95,8 @@ public class Squish {
         var initFunc = loadBuiltinhookLibAndResolve();
         //return initFunc.map(p -> p.invoke(boolean.class, port)).orElse(false);
         var result = initFunc.apply(port);
-        QtUtilities.reinstallEventNotifyCallback();
+        System.out.println("reinstalling Jambi callback...");
+        QtUtilities.reinstallEventNotifyCallback(); // reinstall jambi callback
         return result;
     }
 }

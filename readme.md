@@ -6,7 +6,8 @@
 2. Install Squish 7.1 for Mac, using Qt you've installed on the last step
 3. make run.sh of this repository executable with `chmod +x run.sh`
 4. Start the app using command like this `./run.sh -j /Users/max/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home -q /Users/max/Qt/6.4.0/macos/lib -p /Users/max/IdeaProjects/crashdemo`
-5. Enter something in search, verify that you see no crashes, clos the app
+5. Enter something in search, verify that you see no crashes, close the app. 
+   - Note that Squish hook is not installed because you don't set SQUISH_PREFIX env variable, like squish app does.
 6. Create new Squish Test Suite with run.sh AUT
 7. Add these arguments as program arguments there: `-j /Users/max/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home -q /Users/max/Qt/6.4.0/macos/lib -p /Users/max/IdeaProjects/crashdemo`
    - Make sure that arguments point to your locations of Zulu JDK11, Qt 6.4.0 and this project location
