@@ -10,7 +10,7 @@
    - Note that Squish hook is not installed because you don't set SQUISH_PREFIX env variable, like squish app does.
 6. Create new Squish Test Suite with run.sh AUT
 7. Add these arguments as program arguments there: `-j /Users/max/Library/Java/JavaVirtualMachines/azul-11.0.13/Contents/Home -q /Users/max/Qt/6.4.0/macos/lib -p /Users/max/IdeaProjects/crashdemo`
-   - Make sure that arguments point to your locations of Zulu JDK11, Qt 6.4.0 and this project location
+   - Make sure that arguments point to your locations of Zulu JDK11(download from [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=x86-64-bit&package=jdk)), Qt 6.4.0 and this project location
 8. In Squish /bin run `squishserver --config setUsesBuiltinHook run.sh on`
    - this will allow to attach squish only after squish hook was installed in Main.java
    - Without this squish would just fail to connect
