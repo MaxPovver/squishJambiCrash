@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a24766f-8db0-4a07-8f07-5bb779bf84a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/run2.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/crash/Squish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crash/Squish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/crash/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crash/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,7 @@
       <updated>1672300587538</updated>
       <workItem from="1672300588925" duration="952000" />
       <workItem from="1672301932162" duration="4559000" />
-      <workItem from="1672310164528" duration="619000" />
+      <workItem from="1672310164528" duration="892000" />
     </task>
     <task id="LOCAL-00001" summary="crash demo app">
       <created>1672306693723</created>
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672307638018</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="a few fixes">
+      <created>1672310926006</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672310926006</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="crash demo app" />
     <MESSAGE value="crash demo app 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="crash demo app 2" />
+    <MESSAGE value="a few fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="a few fixes" />
   </component>
 </project>

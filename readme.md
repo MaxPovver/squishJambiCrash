@@ -21,3 +21,5 @@
       2. this is just a normal signal subscription that works perfectly without squish attached.
    3. If you comment out that line, it will crash on line `QApplication.instance().thread().finished.connect(m_uiPingThread::quit)`
    4. If you comment out that line too, it will crash on `QWidget frame = new QWidget()` line, which seems to be the moment Squish app tries to join the hook
+
+In folder `src/crash/crashlogs` you can see what is in logs when some of these crashes happen
