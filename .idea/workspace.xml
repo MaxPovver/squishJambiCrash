@@ -5,54 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a24766f-8db0-4a07-8f07-5bb779bf84a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crashdemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-charts-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-charts-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimedia-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimedia-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimediawidgets-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-multimediawidgets-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-network-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-network-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-printsupport-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-printsupport-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-qml-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-qml-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-quick-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-quick-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svg-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svg-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svgwidgets-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-svgwidgets-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-uitools-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-uitools-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webchannel-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webchannel-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginecore-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginecore-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginequick-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginequick-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginewidgets-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webenginewidgets-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webview-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/qtjambi-webview-native-macos-6.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crash/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crash/Squish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/first_crash.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/first_crash_squish.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/second_crash.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crash/crashlogs/second_crash_squish.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,8 +73,16 @@
       <option name="presentableId" value="Default" />
       <updated>1672300587538</updated>
       <workItem from="1672300588925" duration="952000" />
-      <workItem from="1672301932162" duration="3292000" />
+      <workItem from="1672301932162" duration="4187000" />
     </task>
+    <task id="LOCAL-00001" summary="crash demo app">
+      <created>1672306693723</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672306693723</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +98,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="crash demo app" />
+    <option name="LAST_COMMIT_MESSAGE" value="crash demo app" />
   </component>
 </project>
