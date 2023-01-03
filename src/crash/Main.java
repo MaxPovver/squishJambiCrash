@@ -56,7 +56,8 @@ public class Main extends QWidget {
         QtUtilities.initializePackage("io.qt.quick");
         System.out.println("Step " + 5);
 
-        //QtUtilities.loadQtLibrary("QuickControls2");
+        //
+        QtUtilities.loadQtLibrary("QuickControls2");
         System.out.println("Step " + 6);
 
 
