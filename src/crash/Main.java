@@ -2,6 +2,7 @@ package crash;
 
 import io.qt.QtUtilities;
 import io.qt.core.*;
+import io.qt.qml.QQmlApplicationEngine;
 import io.qt.webengine.core.QWebEngineUrlScheme;
 import io.qt.webengine.quick.QtWebEngineQuick;
 import io.qt.webengine.widgets.QWebEngineView;
@@ -22,7 +23,7 @@ public class Main extends QWidget {
      * this method should be invoked from the
      * event-dispatching thread.
      */
-    private static void createAndShowGUI() {
+    private static void createAndShowGUI(QQmlApplicationEngine engine) {
         //Create and set up the window.
         QWidget frame = new QWidget();
         System.out.println("Step 8.1");
@@ -38,6 +39,21 @@ public class Main extends QWidget {
         System.out.println("Step 8.6");
         frame.show();
         System.out.println("Step 8.7");
+        engine.loadData(new QByteArray("import QtQml\n" +
+                "import QtQuick\n" +
+                "import QtQuick.Window\n" +
+                "import QtWebEngine\n" +
+                "Window {\n" +
+                " width: 900\n" +
+                " visible: true\n" +
+                " height: 600\n"+
+                " title: \"Qml Window\"\n"+
+                " WebEngineView {\n" +
+                "        id: webView\n" +
+                "        anchors.fill: parent\n" +
+                "        url: \"https://facebook.com\" \n" +
+                "}\n" +
+                " }"));
     }
 
     public static void main(String[] args) {
@@ -82,7 +98,8 @@ public class Main extends QWidget {
         System.out.println("Step " + 7);
 
         System.out.println("Step " + 8);
-        createAndShowGUI();
+        QQmlApplicationEngine engine = new QQmlApplicationEngine();
+        createAndShowGUI(engine);
         System.out.println("Step " + 9);
         if (Squish.squishPrefixSet()) {
             if (Squish.installBuiltinHook()) {
