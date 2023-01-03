@@ -25,7 +25,6 @@ public class Main extends QWidget {
     private static void createAndShowGUI() {
         //Create and set up the window.
         QWidget frame = new QWidget();
-        QtUtilities.reinstallEventNotifyCallback();
         System.out.println("Step 8.1");
         frame.setWindowTitle("Test window title");
         System.out.println("Step 8.2");
@@ -57,22 +56,14 @@ public class Main extends QWidget {
         QtUtilities.initializePackage("io.qt.quick");
         System.out.println("Step " + 5);
 
-        QtUtilities.loadQtLibrary("QuickControls2");
+        //QtUtilities.loadQtLibrary("QuickControls2");
         System.out.println("Step " + 6);
 
 
 
         QApplication.initialize(args);
 
-        if (Squish.squishPrefixSet()) {
-            if (Squish.installBuiltinHook()) {
-                System.out.println("squish hook loaded ok");
-            } else {
-                System.err.println("Failed to attach squish hook");
-            }
-        } else {
-            System.out.println("crash.Squish prefix not set, skipping hook");
-        }
+
         System.out.println("Step 6.5");
         var app = QApplication.instance();
         System.out.println("Step 6.5.2"); // without installBuiltinHook it doesn't even get to here, crashes on previous line
@@ -80,7 +71,7 @@ public class Main extends QWidget {
         System.out.println("Step 6.6");
         var s_bgQueueThread = new QThread("InvokeLaterBgSupport");
         System.out.println("Step 6.6.1");
-        //QApplication.instance().thread().finished.connect(s_bgQueueThread::quit); // crashes here with squish
+        QApplication.instance().aboutToQuit.connect(s_bgQueueThread::quit); // crashes here with squish
         System.out.println("Step 6.6.2");
         s_bgQueueThread.start();
         System.out.println("Step 6.6.3");
@@ -92,7 +83,16 @@ public class Main extends QWidget {
         System.out.println("Step " + 8);
         createAndShowGUI();
         System.out.println("Step " + 9);
-
+        if (Squish.squishPrefixSet()) {
+            if (Squish.installBuiltinHook()) {
+                System.out.println("squish hook loaded ok");
+            } else {
+                System.err.println("Failed to attach squish hook");
+            }
+        } else {
+            System.out.println("crash.Squish prefix not set, skipping hook");
+        }
+        QtUtilities.reinstallEventNotifyCallback();
         QApplication.exec();
         QApplication.shutdown();
     }
@@ -131,7 +131,7 @@ public class Main extends QWidget {
             m_uiPingThread = new QThread("UiPingThread", this);
             m_pingTimer = new QTimer();
             System.out.println("Step 6.5.5");
-            m_pingTimer.setInterval(1000);
+            m_pingTimer.setInterval(1000*60);
             m_pingTimer.moveToThread(m_uiPingThread);
             m_pingTimer.timeout.connect(() -> {
                 long sendingTime = Instant.now().toEpochMilli();
@@ -147,7 +147,7 @@ public class Main extends QWidget {
             m_uiPingThread.started.connect(m_pingTimer::start);
             m_uiPingThread.finished.connect(m_pingTimer::stop);
             System.out.println("Step 6.5.6");
-            QApplication.instance().thread().finished.connect(m_uiPingThread::quit);
+            QApplication.instance().aboutToQuit.connect(m_uiPingThread::quit);
             System.out.println("Step 6.5.7");
             m_uiPingThread.start(QThread.Priority.LowPriority);
             System.out.println("Step 6.5.8");
