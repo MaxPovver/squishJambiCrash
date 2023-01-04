@@ -1,7 +1,9 @@
 package crash;
 
 import io.qt.QtUtilities;
+import io.qt.core.QFunctionPointer;
 import io.qt.core.QLibrary;
+import io.qt.core.QPair;
 
 import java.util.function.Function;
 
@@ -91,21 +93,48 @@ public class Squish {
     }
 
     public static boolean installBuiltinHook() {
+        var restore = loadSignalsRestore();
         var initFunc = loadBuiltinhookLibAndResolve();
         //return initFunc.map(p -> p.invoke(boolean.class, (short) 0)).orElse(false);
         var result = initFunc.apply((short) 0);
         System.out.println("reinstalling Jambi callback...");
         QtUtilities.reinstallEventNotifyCallback(); // reinstall jambi callback
+        runSignalsRestore(restore);
+
         return result;
     }
 
     public static boolean allowAttaching(short port) {
+        var restore = loadSignalsRestore();
         var initFunc = loadBuiltinhookLibAndResolve();
         //return initFunc.map(p -> p.invoke(boolean.class, port)).orElse(false);
         var result = initFunc.apply(port);
         System.out.println("reinstalling Jambi callback...");
         QtUtilities.reinstallEventNotifyCallback(); // reinstall jambi callback
+        runSignalsRestore(restore);
         return result;
+    }
+
+    public static void runSignalsRestore(QPair<QFunctionPointer, QLibrary> signals)  {
+        if(signals.first!=null){
+            signals.first.invoke();
+            signals.second.unload();
+        }
+    }
+
+    public static QPair<QFunctionPointer, QLibrary> loadSignalsRestore() {
+        QFunctionPointer restore;
+        QLibrary javaSignalRestorer = new QLibrary(System.getProperty("project_path") + "/lib/libJavaSignalRestorer.dylib");
+        if (!javaSignalRestorer.load()) {
+            System.err.println("Failed to load JavaSignalRestorer " + javaSignalRestorer.errorString());
+            restore = null;
+        } else {
+            System.out.println("Loaded " + javaSignalRestorer.fileName());
+            QFunctionPointer initialize = javaSignalRestorer.resolve("initialize");
+            initialize.invoke();
+            restore = javaSignalRestorer.resolve("restoreJNISignals");
+        }
+        return new QPair<>(restore, javaSignalRestorer);
     }
 }
 

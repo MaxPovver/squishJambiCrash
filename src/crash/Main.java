@@ -79,7 +79,15 @@ public class Main extends QWidget {
 
 
         QApplication.initialize(args);
-
+        if (Squish.squishPrefixSet()) {
+            if (Squish.installBuiltinHook()) {
+                System.out.println("squish hook loaded ok");
+            } else {
+                System.err.println("Failed to attach squish hook");
+            }
+        } else {
+            System.out.println("crash.Squish prefix not set, skipping hook");
+        }
 
         System.out.println("Step 6.5");
         var app = QApplication.instance();
@@ -101,16 +109,7 @@ public class Main extends QWidget {
         QQmlApplicationEngine engine = new QQmlApplicationEngine();
         createAndShowGUI(engine);
         System.out.println("Step " + 9);
-        if (Squish.squishPrefixSet()) {
-            if (Squish.installBuiltinHook()) {
-                System.out.println("squish hook loaded ok");
-            } else {
-                System.err.println("Failed to attach squish hook");
-            }
-        } else {
-            System.out.println("crash.Squish prefix not set, skipping hook");
-        }
-        QtUtilities.reinstallEventNotifyCallback();
+
         QApplication.exec();
         QApplication.shutdown();
     }
